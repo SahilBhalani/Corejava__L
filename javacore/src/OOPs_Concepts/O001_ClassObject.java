@@ -3,7 +3,7 @@ package OOPs_Concepts;
 class School
 {
 	int fId;
-	static String fName;
+	 String fName;
 	String fSubject;
 	
 	

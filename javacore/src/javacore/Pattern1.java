@@ -1,6 +1,7 @@
 package javacore;
 
-import java.util.Iterator;
+
+
 
 public class Pattern1 {
 
