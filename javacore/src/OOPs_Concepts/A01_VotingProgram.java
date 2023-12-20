@@ -31,6 +31,7 @@ public class A01_VotingProgram {
 		
 		System.out.println("Enter The Age :");
 		int Age = sc.nextInt();
+		
 		Age a1 = new Age();
 
 		
