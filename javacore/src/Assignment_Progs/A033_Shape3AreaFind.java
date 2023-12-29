@@ -29,7 +29,7 @@ class ssArea extends Shape
 		System.out.println("The Area Of Square Is : "+radius*3.14);
 	}
 }
-public class Shape3AreaFind {
+public class A033_Shape3AreaFind {
 public static void main(String[] args) {
 	ssArea a1 = new ssArea();
 	
