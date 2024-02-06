@@ -11,6 +11,7 @@ public static void main(String[] args) {
 	a1.add(20);
 	a1.add(30);
 	
+	
 	System.out.println("Total Element In ArrayList Is : "+a1.size());
 	
 	Scanner sc = new Scanner(System.in);
