@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Table</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script>
+		
+		function validation()
+		{
+			var uname = document.getElementById("uname").value
+			var email = document.getElementById("email").value
+			var pass = document.getElementById("pass").value
+			var cpass = document.getElementById("cpass").value
+			
+			var unameErr = document.getElementById("unameErr")
+			var emailErr = document.getElementById("emailErr")
+			var passErr = document.getElementById("passErr")
+			var cpassErr = document.getElementById("cpassErr")
+			
+			var unameExp = /^[a-zA-Z]+$/
+			var emailExp = /^[a-zA-z_0-9-]+@[a-z]+\.[a-z]{1,3}$/
+			var passExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{8,16}$/
+			
+			
+			if(uname=="" || uname==null)
+			{
+				unameErr.innerHTML="Uname is Required !!!"
+			}
+			else if(!unameExp.test(uname))
+			{
+				unameErr.innerHTML="Uname contains Alphabate only"
+			}
+			else{
+				unameErr.innerHTML=""
+			}
+			
+			if(email=="" || email==null)
+			{
+				emailErr.innerHTML="Email is Required !!!"
+			}
+			else if(!emailExp.test(email))
+			{
+				emailErr.innerHTML="Invalid email formate"
+			}
+			else{
+				emailErr.innerHTML=""
+			}
+			
+			if(pass=="" || pass==null)
+			{
+				passErr.innerHTML="Password is Required !!!"
+			}
+			else if(!passExp.test(pass))
+			{
+				passErr.innerHTML="Invalid Password Format"
+				
+			}
+			else{
+				passErr.innerHTML=""
+			}
+
+			if(cpass != pass)
+			{
+				cpassErr.innerHTML="Cpass must be same as pass"
+			}
+			else{
+				cpassErr.innerHTML=""
+			}
+			
+		}
+		
+		if(uname!="" || uname!=null  || email!="" || email!=null || pass!="" || pass!=null || pass!="" || cpass!="" || cpass!=null )
+		{
+				btn.disabled=false;
+		}
+		
+	</script>
+</head>
+<body>
+	
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-4 m-auto">
+					
+				<h1>Registration Form</h1>
+			<form action="table.html" onsubmit="validation()" method="post">
+				<div class="form-group">
+				<label>Username</label>
+				<input type="text" name="uname" id="uname" class="form-control" onkeyup="validation()">
+				<span id="unameErr"  class="text-danger"></span>
+				</div>
+				
+				<div class="form-group">
+				<label>Email</label>
+				<input type="text" id="email" class="form-control" onkeyup="validation()">
+				<span id="emailErr"  class="text-danger"></span>
+				</div>
+				
+				<div class="form-group">
+				<label>Password</label>
+				<input type="text" id="pass" class="form-control" onkeyup="validation()">
+				<span id="passErr"  class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+				<label>Confirm Password</label>
+				<input type="text" id="cpass" class="form-control" onkeyup="validation()">
+				<span id="cpassErr" class="text-danger"></span>
+				</div>
+				
+				
+				<button id="btn" disabled class="btn btn-success">Submit </button>
+				
+			</form>
+			
+			</div>
+			</div>
+		</div>
+			
+</body>
+</html>
