@@ -72,13 +72,14 @@
 		<span style="color: green"> ${msg} </span>
 		
 		
+		</div>
+		</div>
+		</div>
 		
 		
 	</form>
-	</div>
-			<div class="col-md-4"></div>
-		</div>
 	
-	</div>
+			<div class="col-md-4"></div>
+		
 </body>
 </html>

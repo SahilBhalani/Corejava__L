@@ -20,7 +20,7 @@ public class UpdateController extends HttpServlet {
 		int uid = Integer.parseInt(req.getParameter("uid"));
 		EmployeeDao dao = new EmployeeDao();
 		
-			if(action.equals("edit"))
+		if(action.equals("edit"))
 		{
 			Employee e = dao.GetEmpId(uid);
 			req.setAttribute("edata", e);

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login form</title>
+<title>Login Form</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -22,7 +22,8 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<form action="login" method="post">
+
+<form action="login">
 		
 		<div class="container">
 		<div class="row">
@@ -34,8 +35,8 @@
 	
 		
 		<div class="form-group">
-		<label>Email</label>
-		<input type="text" class="form-control" name="email">
+		<label>Uname</label>
+		<input type="text" class="form-control" name="uname">
 		</div>
 		
 		<div class="form-group">
@@ -44,15 +45,15 @@
 		</div>
 		
 		<div class="form-group">
-		<input type="submit" class="btn btn-success">
+		<input type="Submit" class="btn btn-success">
 		</div>
+		<span>${err}</span>
 		
-		<span><a href=Registration.jsp>New User ? Register Here</a></span>
-		<span class="text-danger">${err}</span>
 		</div>
 		</div>
 		</div>
 		</form>
+		
 		
 
 </body>

@@ -19,7 +19,7 @@ public class RegistrationController extends HttpServlet{
 		
 		PrintWriter pw = resp.getWriter();
 		
-		String id = req.getParameter("id");
+		
 		String fname = req.getParameter("fname");
 		String lname = req.getParameter("lname");
 		String email = req.getParameter("email");
@@ -34,52 +34,14 @@ public class RegistrationController extends HttpServlet{
 		e.setPhone(phone);
 		
 		EmployeeDao dao = new EmployeeDao();
-		
-		if(id.equals(null) || id.equals(""))
-		{
-			boolean b = dao.isEmailExist(e);
-			
-			if(b)
-			{
-				req.setAttribute("err", "Email already exist !!");
-				req.getRequestDispatcher("reg.jsp").forward(req, resp);
-			}
-			else
-			{
-				int i = dao.registration(e);
-				if(i>0)
-				{
-					req.setAttribute("msg", "Registration success!!!");
-					req.getRequestDispatcher("reg.jsp").forward(req, resp);
-				}
-			}
-			
+
+		int i = dao.registration(e);
+		if (i > 0) {
+			pw.append("Registration successfully !!");
 		}
-		else
-		{
-			int uid = Integer.parseInt(id);
-			e.setId(uid);
-			boolean b = dao.isEmailExist(e);
-			
-			if(b)
-			{
-				req.setAttribute("err", "Email already exist !!");
-				req.getRequestDispatcher("reg.jsp").forward(req, resp);
-			}
-			else
-			{
-				int i = dao.UpdateEmp(e);
-				if(i>0)
-				{
-					req.setAttribute("msg", "Update success!!!");
-					req.getRequestDispatcher("reg.jsp").forward(req, resp);
-				}
-			}
-			
 		
-	
 		}
-	}
 }
+
 
 

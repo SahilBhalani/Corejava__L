@@ -22,8 +22,11 @@ public class DisplayController extends HttpServlet{
 		EmployeeDao dao = new EmployeeDao();
 		ArrayList<Employee> e = dao.getEmpData();
 		
-		req.setAttribute("data", e);
-		req.getRequestDispatcher("display.jsp").forward(req, resp);
+		PrintWriter pw  =resp.getWriter();
+		Gson json = new Gson();
+		String data =  json.toJson(e);
+		
+		pw.append(data);
 	}
 
 }
