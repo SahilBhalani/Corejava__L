@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean class="com.User" id="user">
+    <property name="id" value="1"></property>
+    <property name="name" value="sahil"></property>
+    <property name="email" value="s@gmail.com"></property>
+    <property name="password" value="11223344"></property>
+ 	<property name="lang">
+ 	<list>
+ 	<value>hindi</value>
+ 	<value>Gujrati</value>
+ 	<value>English</value>
+ 	<value>English</value>
+ 	</list>
+ 	</property>
+ 	
+ 	<property name="sub">
+ 	<set>
+ 	<value>Java</value>
+ 	<value>Android</value>
+ 	<value>Ios</value>
+ 	<value>Ios</value>
+ 	</set>
+ 	</property>
+ 	
+ 	<property name="adr" ref="adr"></property>
+ 	<property name="info" ref="info"></property>
+ 	
+    </bean>
+    
+    <bean class="com.Address" id="adr" autowire="byName">
+    <property name="city" value="Surat"></property>
+    <property name="state" value="Gujrat"></property>
+    <property name="country" value="India"></property>
+    </bean>
+    
+    <bean class="com.Info" id="info" autowire="byName">
+    <property name="Phone" value="4567894561"></property>
+    </bean>
+    
+    
+    </beans>
