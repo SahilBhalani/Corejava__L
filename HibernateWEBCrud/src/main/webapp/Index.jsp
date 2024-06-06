@@ -47,8 +47,10 @@
 		<input type="submit" class="btn btn-success">
 		
 		</div>
+		<span><a href="display">View Data</a></span>
+		<span><a href="Login.jsp">Login Here</a></span>
 	</form>
-	<span><a href="display">View Data</a></span>
+	
 	</div>
 	</div>
 	</div>
