@@ -79,6 +79,7 @@ public class UserController {
 	public String pd(Model model)
 	{
 		model.addAttribute("categories", cservice.ViewAllCategory());
+		model.addAttribute("products", pservice.ViewAllProduct());
 		return "product";
 	}
 	
