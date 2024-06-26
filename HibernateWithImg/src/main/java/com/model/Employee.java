@@ -19,12 +19,6 @@ public class Employee {
 	@Column(name="name")
 	String name;
 	
-	@Column(name="email")
-	String email;
-	
-	@Column(name="pass")
-	String pass;
-	
 	@Column(name="img")
 	String img;
 
@@ -42,22 +36,6 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPass() {
-		return pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
 	}
 
 	public String getImg() {

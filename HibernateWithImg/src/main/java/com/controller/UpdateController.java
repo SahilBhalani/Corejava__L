@@ -1,44 +1,43 @@
-package Controller;
+package com.controller;
 
 import java.io.IOException;
 
-import dao.StudentDao;
+import com.dao.Empdao;
+import com.model.Employee;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Student;
 
 @WebServlet("/update")
-public class UpdateController extends HttpServlet {
+public class UpdateController  extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+			
 		String action = req.getParameter("action");
 		int id = Integer.parseInt(req.getParameter("id"));
 		
-		StudentDao dao = new StudentDao();
+		
+		Empdao dao = new Empdao();
 		if(action.equals("edit"))
 		{
-			Student st = dao.getByid(id);
-			req.setAttribute("edata", st);
+			Employee e = dao.GetEmpBYID(id);
+			req.setAttribute("edata", e);
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
-			req.setAttribute("msg", "update Successful!!!!!");
-			
-		}
-		else if(action.equals("delete"))
-		{
-			int i = dao.deleteById(id);
-			if(i>0)
-			{
-				req.getRequestDispatcher("display").forward(req, resp);
-				
-			}
 			
 		}
 		
+		else if(action.equals("delete"))
+		{
+			int i = dao.DeleteEmp(id);
+			if(i>0)
+			{
+				req.getRequestDispatcher("display").forward(req, resp);
+			}
+		}
 	}
 	
 }

@@ -22,27 +22,28 @@ public class RegController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		Employee e = new Employee();
 		String id = req.getParameter("id");
+		if(id.equals("") || id.equals(null))
+		{
+			
+		}
+		else
+		{
+			e.setId(Integer.parseInt(id));
+		}
 		String name= req.getParameter("name");
-		String email = req.getParameter("email");
-		String pass = req.getParameter("pass");
 		Part file = req.getPart("img");
 
 		String filename = Paths.get(file.getSubmittedFileName()).getFileName().toString();
-		
-		
 	
-		Employee e = new Employee();
+		
 		
 		e.setName(name);
-		e.setEmail(email);
-		e.setPass(pass);
 		e.setImg(filename);
 		
 		
 		String basepath = req.getServletContext().getRealPath("")+File.separator+"img";
-		
-		
 		
 		File f = new File(basepath);
 		
@@ -57,8 +58,15 @@ public class RegController extends HttpServlet {
 		
 		dao.AddorUpdate(e);
 		
-		req.setAttribute("msg", "reg successFulll!!!!");
-		req.getRequestDispatcher("index.jsp").forward(req, resp);
+		if(id.equals("") || id.equals(null))
+		{
+			req.setAttribute("msg", "reg successFulll!!!!");
+		}
+		else
+		{
+			req.setAttribute("msg", "update SuccessFull!!!");
+		}
+				req.getRequestDispatcher("index.jsp").forward(req, resp);
 		
 		
 
