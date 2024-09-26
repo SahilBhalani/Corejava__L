@@ -66,6 +66,7 @@ public class RegController extends HttpServlet {
 		{
 			req.setAttribute("msg", "update SuccessFull!!!");
 		}
+		
 				req.getRequestDispatcher("index.jsp").forward(req, resp);
 		
 		
