@@ -33,7 +33,7 @@ public class Usercontroller {
 	public String AddUser(@RequestBody User u)
 	{
 		us.AddUser(u);
-		return "user Added successfully";
+		return "user added Successfully!!!";
 	}
 	
 	@DeleteMapping("/")

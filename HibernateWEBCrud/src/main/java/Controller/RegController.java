@@ -39,7 +39,7 @@ public class RegController extends HttpServlet {
 		
 		if(id.equals("") || id.equals(null))
 		{
-			req.setAttribute("msg", "REgistration SuccessFul");
+			req.setAttribute("msg", "Registration SuccessFul");
 		}
 		else
 		{

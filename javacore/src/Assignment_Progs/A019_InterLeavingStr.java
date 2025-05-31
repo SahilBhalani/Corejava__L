@@ -22,8 +22,8 @@ public class A019_InterLeavingStr {
 		    }
 
 		    public static void main(String[] args) {
-		        String str1 = "WX";
-		        String str2 = "YZ";
+		        String str1 = "AB";
+		        String str2 = "CD";
 		        
 		        System.out.println("All interleavings of " + str1 + " and " + str2 + ":");
 		        interleave(str1, str2, "", 0, 0);
